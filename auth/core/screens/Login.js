@@ -22,8 +22,9 @@ import { DBManager } from 'app-module';
 import EmailAuthMg from '../../email/components/EmailAuthMg';
 import AuthRegister from '../../email/components/AuthRegister';
 // import DBManager from '../../../../app/DBManager';
-import ProfImg from '../../../../images/profile.png';
-import Application from '../../../../constants/config';
+import ProfImg from '../../../../../../src/images/profile.png';
+//import Application from '../../../../constants/config';
+import { Config } from '@mongrov/config';
 
 export default class Login extends BaseListenerComponent {
   constructor(props) {
@@ -240,14 +241,14 @@ export default class Login extends BaseListenerComponent {
             <Image style={styles.loginHeaderCurve} source={this.headerCurve} resizeMode="stretch" />
           </View> */}
           <View style={[styles.loginBrandLogoView, styles.alignJustifyCenter]}>
-            {!Application.APPCONFIG.CHANGE_SERVER && (
+            {!Config.APPCONFIG.CHANGE_SERVER && (
               <Image
-                source={Application.logo}
+                source={Config.logo}
                 style={{ width: 200, height: 100 }}
                 resizeMode="contain"
               />
             )}
-            {Application.APPCONFIG.CHANGE_SERVER && (
+            {Config.APPCONFIG.CHANGE_SERVER && (
               <FastImage
                 style={{ width: 200, height: 100 }}
                 source={{
@@ -257,7 +258,7 @@ export default class Login extends BaseListenerComponent {
                 resizeMode={FastImage.resizeMode.contain}
               />
             )}
-            {Application.APPCONFIG.CHANGE_SERVER && (
+            {Config.APPCONFIG.CHANGE_SERVER && (
               <TouchableOpacity
                 style={styles.loginServerChangeContainer}
                 onPress={() => {
@@ -270,8 +271,8 @@ export default class Login extends BaseListenerComponent {
                 <Text style={[styles.subtext]}>{DBManager.app.app.host}</Text>
               </TouchableOpacity>
             )}
-            {!Application.APPCONFIG.CHANGE_SERVER &&
-              !Application.APPCONFIG.HIDE_WORKSPACE_VIEW && (
+            {!Config.APPCONFIG.CHANGE_SERVER &&
+              !Config.APPCONFIG.HIDE_WORKSPACE_VIEW && (
                 <View>
                   <Text style={[styles.cListLastMessage]}>
                     {' '}

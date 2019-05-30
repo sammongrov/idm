@@ -5,13 +5,14 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 
 import { styles } from 'react-native-theme';
-import ProfImg from '../../../../images/profile.png';
+import ProfImg from '../../../../../../src/images/profile.png';
 
 import FormError from '../../../ui/components/form/FormError';
 import SubmitButton from '../../../ui/components/form/SubmitButton';
 import TextField from '../../../ui/components/form/TextField';
 import { isEmailValid, isNameValid, isPasswordValid } from '../../../util/validator';
-import Application from '../../../../constants/config';
+// import Application from '../../../../constants/config';
+import { Config } from '@mongrov/config';
 
 class EmailAuthMg extends React.Component {
   static defaultProps = {
@@ -126,7 +127,7 @@ class EmailAuthMg extends React.Component {
             text={buttonText}
             containerStyle={[{ marginHorizontal: 15 }, styles.marginTop20]}
           />
-          {Application.APPCONFIG.SHOW_REGISTER && (
+          {Config.APPCONFIG.SHOW_REGISTER && (
             <SubmitButton
               // disabled={invalid && !error}
               loading={submitting}

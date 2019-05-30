@@ -16,7 +16,7 @@ import { styles } from 'react-native-theme';
 
 // import FormError from '../../../ui/components/form/FormError';
 import { ErrorInfo } from '@ui/components';
-import Screen from '../../../ui/components/Screen';
+import Screen from '@ui/components/Screen';
 import SubmitButton from '../../../ui/components/form/SubmitButton';
 import { showMessage } from '../../../ui/components/Toast';
 import TextField from '../../../ui/components/form/TextField';
